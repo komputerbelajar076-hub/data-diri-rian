@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Day 1 Belajar CSS</title>
+
+  <!-- Link ke Font Awesome untuk ikon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: #fff;
+      background: linear-gradient(135deg, #283e51, #485563);
+      min-height: 100vh;
+    }
+
+    header, main, footer {
+      max-width: 960px;
+      margin: auto;
+      padding: 1rem;
+    }
+
+    header { text-align: center; }
+    h1 { margin: .2rem 0; font-size: 2rem; }
+
+    .card {
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(6px);
+      padding: 1.5rem;
+      border-radius: 16px;
+      margin: 1.5rem 0;
+    }
+
+    .profile-card {
+      background: rgba(255,255,255,0.15);
+      padding: 2rem 1.5rem;
+      border-radius: 16px;
+      text-align: center;
+      max-width: 520px;
+      margin: 2rem auto;
+    }
+
+    /* Foto profil bulat */
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      margin-top: -80px;
+      background: #ccc;
+      transition: transform .3s;
+    }
+    .profile-pic:hover { transform: scale(1.05); }
+
+    h2, h3 { margin-top: .5rem; }
+
+    dl { margin: 1rem 0; text-align: left; }
+    dt { font-weight: 600; margin-top: .5rem; }
+    dd { margin: 0 0 .5rem 1.5rem; }
+
+    ol { margin: .25rem 0 0 1.5rem; text-align: left; }
+
+    .icon {
+      color: #ccc;
+      margin-right: .5rem;
+    }
+
+    code {
+      background: rgba(0,0,0,0.3);
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-family: Consolas, monospace;
+      color: #ffedcc;
+    }
+
+    footer {
+      text-align: center;
+      font-size: .9rem;
+      margin-top: 2rem;
+      color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <!-- Bagian Judul -->
+  <header>
+    <h1><i class="fas fa-code icon"></i> DAY 1 BELAJAR CSS</h1>
+    <p>Materi dasar tentang <strong>Jenis Selector CSS</strong> + contoh biodata sederhana.</p>
+  </header>
+
+  <!-- Bagian Materi CSS -->
+  <main>
+    <section class="card">
+      <h2><i class="fas fa-book-open icon"></i> Jenis Selector CSS</h2>
+      <ul>
+        <li><code>element { }</code> → selector berdasarkan nama elemen. <br>
+            <em>Contoh:</em> <code>p { color: blue; }</code></li>
+        <li><code>.class { }</code> → selector berdasarkan nama kelas. <br>
+            <em>Contoh:</em> <code>.judul { font-size: 24px; }</code></li>
+        <li><code>#id { }</code> → selector berdasarkan ID unik. <br>
+            <em>Contoh:</em> <code>#utama { background: yellow; }</code></li>
+        <li><code>* { }</code> → universal selector (semua elemen). <br>
+            <em>Contoh:</em> <code>* { margin: 0; }</code></li>
+        <li><code>element element { }</code> → descendant selector. <br>
+            <em>Contoh:</em> <code>div p { color: red; }</code></li>
+        <li><code>element:hover { }</code> → pseudo-class selector. <br>
+            <em>Contoh:</em> <code>a:hover { color: green; }</code></li>
+      </ul>
+    </section>
+
+    <!-- Bagian Biodata -->
+    <article class="profile-card" itemscope itemtype="https://schema.org/Person">
+      <!-- Foto Profil -->
+      <img src="/assets/eff6c32dd25fd484b87ded6945d6edf6 (1).jpg" alt="Foto Rian Radiansyah" class="profile-pic">
+
+      <h2 itemprop="name"><i class="fas fa-user icon"></i> RIAN RADIANSYAH</h2>
+
+      <section>
+        <h3><i class="fas fa-graduation-cap icon"></i> Identitas</h3>
+        <dl>
+          <dt><i class="fas fa-signature icon"></i> Nama</dt>
+          <dd itemprop="name">RIAN GA PAKE Y</dd>
+
+          <dt><i class="fas fa-school icon"></i> Kelas</dt>
+          <dd><span itemprop="affiliation">RPL 1</span></dd>
+        </dl>
+      </section>
+
+      <section>
+        <h3><i class="fas fa-heart icon"></i> HOBI</h3>
+        <ol itemprop="knowsAbout">
+          <li><i class="fas fa-book icon"></i> BELAJAR</li>
+          <li><i class="fas fa-laptop-code icon"></i> Belajar Coding untuk Fun</li>
+          <li><i class="fas fa-cloud icon"></i> MENGHAYAL</li>
+        </ol>
+      </section>
+
+      <section>
+        <h3><i class="fas fa-star icon"></i> CITA-CITA</h3>
+        <p itemprop="seeks">MEMILIKI UANG 199T DAN SUKSES</p>
+      </section>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Belajar CSS – Day 1. Semua hak dilindungi.</p>
+  </footer>
+</body>
+</html>
